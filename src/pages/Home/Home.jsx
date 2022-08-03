@@ -3,34 +3,35 @@ import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import Topbar from "../../components/Topbar/Topbar";
 import axios from "axios";
 import "./home.css";
+import { AllPokemon } from "../../config/Api";
+import { SinglePokemon } from "../../config/Api";
 const Home = () => {
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-  const [allpokemon, setAllPokemon] = useState([]);
-  const [loadMore, setLoadMore] = useState(url);
-  const getAllPokemon = async () => {
+  const [pokemonList, setPokemonList] = useState([]);
+  const [loadMore, setLoadMore] = useState(AllPokemon);
+
+  const fetchPokemonList = async () => {
     const response = await axios.get(loadMore).then((res) => res.data);
-    console.log(response);
     setLoadMore(response.next);
-    function createPokemonObject(result) {
+    const createPokemonObject = (result) => {
       result.forEach(async (element) => {
         const res = await axios
-          .get(`https://pokeapi.co/api/v2/pokemon/${element.name}`)
+          .get(SinglePokemon(element.name))
           .then((res) => res.data);
-        setAllPokemon((currentList) => [...currentList, res]);
+        setPokemonList((currentList) => [...currentList, res]);
       });
-    }
+    };
     createPokemonObject(response.results);
   };
   useEffect(() => {
-    getAllPokemon();
-  }, []);
-  console.log(allpokemon);
+    fetchPokemonList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pokemonList]);
   return (
     <div>
       <Topbar />
       <div className="cardContainer">
-        {allpokemon &&
-          allpokemon.map((item, index) => {
+        {pokemonList &&
+          pokemonList.map((item, index) => {
             return (
               <PokemonCard
                 id={item.id}
@@ -43,7 +44,7 @@ const Home = () => {
           })}
       </div>
       <div>
-        <button onClick={() => getAllPokemon()}>Load More</button>
+        <button onClick={() => fetchPokemonList()}>Load More</button>
       </div>
     </div>
   );
