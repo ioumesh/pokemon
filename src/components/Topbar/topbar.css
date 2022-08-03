@@ -1,0 +1,29 @@
+.topbar {
+  min-height: 10vh;
+  background-color: #393e46;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.btn {
+  cursor: pointer;
+}
