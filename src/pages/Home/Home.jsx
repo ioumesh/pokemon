@@ -25,7 +25,7 @@ const Home = () => {
   useEffect(() => {
     fetchPokemonList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pokemonList]);
+  }, []);
   return (
     <div>
       <Topbar />
