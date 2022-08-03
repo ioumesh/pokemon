@@ -12,7 +12,7 @@ const Home = () => {
   const fetchPokemonList = async () => {
     const response = await axios.get(loadMore).then((res) => res.data);
     setLoadMore(response.next);
-    const createPokemonObject = (result) => {
+    const fetchSinglePokemon = (result) => {
       result.forEach(async (element) => {
         const res = await axios
           .get(SinglePokemon(element.name))
@@ -20,12 +20,15 @@ const Home = () => {
         setPokemonList((currentList) => [...currentList, res]);
       });
     };
-    createPokemonObject(response.results);
+    fetchSinglePokemon(response.results);
   };
   useEffect(() => {
     fetchPokemonList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const handleNextPokemon = () => {
+    fetchPokemonList();
+  };
   return (
     <div>
       <Topbar />
@@ -43,8 +46,10 @@ const Home = () => {
             );
           })}
       </div>
-      <div>
-        <button onClick={() => fetchPokemonList()}>Load More</button>
+      <div className="buttonWrapper">
+        <button className="btn" onClick={handleNextPokemon}>
+          Next &raquo;
+        </button>
       </div>
     </div>
   );
