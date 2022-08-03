@@ -1,15 +1,23 @@
 import React from "react";
 import "./pokemoncard.css";
-const PokemonCard = () => {
+const PokemonCard = ({ id, name, image, type }) => {
   return (
-    <div className="cardWrapper">
-      <div className="card">
-        <image src="" alt="pokemon-image" />
-        <span>Id</span>
-        <spn>Name</spn>
-        <span>type</span>
+    <>
+      <div className="cardWrapper">
+        <div className="card">
+          <div>
+            <image src={image} alt={name} />
+          </div>
+          <div>
+            <span>#{id}</span>
+          </div>
+          <div>
+            <h3>{name}</h3>
+            <small>{type}</small>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
