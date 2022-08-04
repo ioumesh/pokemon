@@ -1,0 +1,13 @@
+.featuresWrapper {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  padding: 0.5rem;
+}

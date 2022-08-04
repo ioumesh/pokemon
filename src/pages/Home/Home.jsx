@@ -33,7 +33,6 @@ const Home = () => {
   };
   return (
     <div>
-      <Topbar />
       <div className="cardContainer">
         {pokemonList &&
           pokemonList.map((item, index) => {
