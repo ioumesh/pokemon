@@ -29,7 +29,16 @@ const Features = () => {
               Github--Fork
             </a>
           </li>
-          <li>4.2)Netlify</li>
+          <li>
+            4.2
+            <a
+              href="https://pokemonrevirt.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Github--Fork
+            </a>
+          </li>
         </ul>
       </div>
     </>
