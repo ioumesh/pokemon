@@ -29,6 +29,7 @@ const Home = () => {
   const handleNextPokemon = () => {
     fetchPokemonList();
   };
+  console.log(pokemonList);
   return (
     <>
       <div>
@@ -42,6 +43,7 @@ const Home = () => {
                   image={item.sprites.other.dream_world.front_default}
                   type={item.types[0].type.name}
                   key={index}
+                  stats={item.stats}
                 />
               );
             })}
