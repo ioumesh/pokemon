@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
-
-import Topbar from "../../components/Topbar/Topbar";
 import axios from "axios";
 import "./home.css";
 import { AllPokemon } from "../../config/Api";
