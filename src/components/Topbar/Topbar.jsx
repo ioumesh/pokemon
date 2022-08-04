@@ -4,8 +4,8 @@ const Topbar = () => {
   return (
     <div className="topbar">
       <div className="left">
-        <div className="logo">Logo</div>
-        <span className="toggle">Toggle</span>
+        <div className="text">Pokemon</div>
+        <span className="text">Features</span>
       </div>
       <div className="right">
         <button className="btn">Login</button>

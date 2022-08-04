@@ -12,10 +12,11 @@
   align-items: center;
   gap: 2rem;
 }
-.logo {
+.text {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+  color: #e0f1fd;
 }
 .right {
   display: flex;
