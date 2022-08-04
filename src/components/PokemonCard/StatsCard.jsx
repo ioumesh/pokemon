@@ -9,19 +9,20 @@ const StatsCard = ({ stats }) => {
           return (
             <div className="statsWrapper">
               <span className="name">{item.stat.name}</span>
-              <div>
-                <ProgressBar
-                  completed={`${item.base_stat}`}
-                  bgColor={"#e44219"}
-                  baseBgColor={"#F09A92"}
-                  borderRadius="0"
-                  height="10px"
-                  labelAlignment="outside"
-                  transitionDuration="1s"
-                  transitionTimingFunction="ease-in-out"
-                  animateOnRender="true"
-                />
-              </div>
+
+              <ProgressBar
+                completed={`${item.base_stat}`}
+                bgColor={"#e44219"}
+                baseBgColor={"#F09A92"}
+                borderRadius="0"
+                height="10px"
+                labelAlignment="outside"
+                transitionDuration="1s"
+                transitionTimingFunction="ease-in-out"
+                animateOnRender="true"
+                labelClassName="label"
+                className="wrapper"
+              />
             </div>
           );
         })}
