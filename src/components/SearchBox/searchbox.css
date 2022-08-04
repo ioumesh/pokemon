@@ -1,0 +1,38 @@
+.searchWrapper {
+  width: 100%;
+  position: relative;
+}
+input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  width: 80%;
+}
+
+.searchWrapper button {
+  position: absolute;
+  right: 5rem;
+  top: 0px;
+}
+.searchBtn {
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  background-color: #e0f1fd;
+  color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .searchWrapper {
+    left: 0.5rem;
+    width: 200px;
+  }
+  input {
+    width: 100%;
+  }
+  .searchWrapper button {
+    right: 0rem;
+    top: 0px;
+  }
+}

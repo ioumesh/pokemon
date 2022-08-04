@@ -20,11 +20,27 @@
 }
 .right {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   flex: 1;
+  gap: 10rem;
 }
 
 .btn {
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar {
+    width: 100%;
+    overflow: hidden;
+  }
+  .feature {
+    display: none;
+  }
+  .btn {
+    position: relative;
+    width: 50px;
+    right: 9rem;
+    font-size: 13px;
+  }
 }

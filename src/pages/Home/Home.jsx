@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import axios from "axios";
 import "./home.css";
 import { AllPokemon } from "../../config/Api";
 import { SinglePokemon } from "../../config/Api";
-
+import { PokeContext } from "../../PokemonContext";
 const Home = () => {
-  const [pokemonList, setPokemonList] = useState([]);
+  const { pokemonList, setPokemonList } = useContext(PokeContext);
   const [loadMore, setLoadMore] = useState(AllPokemon);
 
   const fetchPokemonList = async () => {
@@ -30,27 +30,29 @@ const Home = () => {
     fetchPokemonList();
   };
   return (
-    <div>
-      <div className="cardContainer">
-        {pokemonList &&
-          pokemonList.map((item, index) => {
-            return (
-              <PokemonCard
-                id={item.id}
-                name={item.name}
-                image={item.sprites.other.dream_world.front_default}
-                type={item.types[0].type.name}
-                key={index}
-              />
-            );
-          })}
+    <>
+      <div>
+        <div className="cardContainer">
+          {pokemonList &&
+            pokemonList.map((item, index) => {
+              return (
+                <PokemonCard
+                  id={item.id}
+                  name={item.name}
+                  image={item.sprites.other.dream_world.front_default}
+                  type={item.types[0].type.name}
+                  key={index}
+                />
+              );
+            })}
+        </div>
       </div>
       <div className="buttonWrapper">
         <button className="btn" onClick={handleNextPokemon}>
           Next &raquo;
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

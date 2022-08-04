@@ -18,6 +18,7 @@ const Features = () => {
           <h3>3)Packages</h3>
           <li>3.1)React Router Dom</li>
           <li>3.2)Axios</li>
+          <li>3.3)React Error Boundaries</li>
           <h3>4)Deployed & Hosted</h3>
           <li>
             4.1)
@@ -30,13 +31,13 @@ const Features = () => {
             </a>
           </li>
           <li>
-            4.2
+            4.2)
             <a
               href="https://pokemonrevirt.netlify.app/"
               target="_blank"
               rel="noreferrer"
             >
-              Github--Fork
+              Netlify
             </a>
           </li>
         </ul>
